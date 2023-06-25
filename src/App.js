@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import ApiFetching from './component/ApiFetching'
+// import { BrowserRouter, Router, Route} from "react-router-dom";
+// import Home from './component/Router/Home'
+// import Contact from './component/Router/Contact'
+// import About from './component/Router/About'
+// import Profile from './component/Router/Profile'
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+      {/* <BrowserRouter>
+      <Router>
+        <Route  path="/" element={<Home/>} />
+        <Route  path="contact" element={<Contact />} />
+        <Route  path="about" element={<About />} />
+        <Route  path="profile" element={<Profile />} />
+      </Router>
+    </BrowserRouter> */}
+    <ApiFetching></ApiFetching>
+     </div>
+  )
 }
-
-export default App;
