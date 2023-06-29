@@ -1,22 +1,23 @@
-import React from 'react'
-import ApiFetching from './component/ApiFetching'
-// import { BrowserRouter, Router, Route} from "react-router-dom";
-// import Home from './component/Router/Home'
-// import Contact from './component/Router/Contact'
-// import About from './component/Router/About'
-// import Profile from './component/Router/Profile'
+import React from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./component/Router/Home";
+import Contact from "./component/Router/Contact";
+import About from "./component/Router/About";
+import MainHome from "./component/Router/MainHome";
+import News from "./component/project1/News";
 export default function App() {
   return (
     <div>
-      {/* <BrowserRouter>
-      <Router>
-        <Route  path="/" element={<Home/>} />
-        <Route  path="contact" element={<Contact />} />
-        <Route  path="about" element={<About />} />
-        <Route  path="profile" element={<Profile />} />
-      </Router>
-    </BrowserRouter> */}
-    <ApiFetching></ApiFetching>
-     </div>
-  )
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainHome />}>
+            <Route index element={<Home />}></Route>
+            <Route exact path="/contact" element={<Contact />}></Route>
+            <Route exact path="/about" element={<About />}></Route>
+            <Route exact path="/news" element={<News />}></Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
