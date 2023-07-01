@@ -11,7 +11,7 @@ export default function News() {
 
   const getNews = async () => {
     let url = await fetch(
-      `https://newsapi.org/v2/everything?q=${searchnews}&from=2023-05-29&sortBy=publishedAt&apiKey=a2fbe4967c494fe1a68e246c29207df0&pageSize=${pageSize}&page=${currentPage}`
+      `https://newsapi.org/v2/everything?q=${searchnews}&from=2023-07-01&sortBy=publishedAt&apiKey=a2fbe4967c494fe1a68e246c29207df0&pageSize=${pageSize}&page=${currentPage}`
     );
     let jsonData = await url.json();
     setNews(jsonData.articles);
@@ -48,7 +48,25 @@ export default function News() {
     setCurrentPage(pageNumber);
   };
 
+  const renderPaginationButtons = () => {
+    const paginationButtons = [];
 
+    if (totalPages) {
+      for (let page = 1; page <= totalPages; page++) {
+        paginationButtons.push(
+          <button
+            key={page}
+            className={`pagination-button ${currentPage === page ? 'active' : ''}`}
+            onClick={() => handlePageChange(page)}
+          >
+            {page}
+          </button>
+        );
+      }
+    }
+
+    return paginationButtons;
+  };
 
   return (
     <>
@@ -95,6 +113,7 @@ export default function News() {
         <button className="pagination-button" onClick={handlePrevPage}>
           Prev
         </button>
+       {renderPaginationButtons()}
         <button className="pagination-button" onClick={handleNextPage}>
           Next
         </button>

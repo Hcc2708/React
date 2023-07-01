@@ -1,0 +1,9 @@
+.row{
+    display: grid;
+    grid-template-columns: 3fr 10fr;
+    height: 600px;
+}
+.item{
+    border: 2px solid red;
+   
+}

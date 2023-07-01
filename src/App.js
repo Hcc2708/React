@@ -5,10 +5,11 @@ import Contact from "./component/Router/Contact";
 import About from "./component/Router/About";
 import MainHome from "./component/Router/MainHome";
 import News from "./component/project1/News";
+import Todos from "./component/Project3Todo/Todos";
 export default function App() {
   return (
     <div>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainHome />}>
             <Route index element={<Home />}></Route>
@@ -17,7 +18,9 @@ export default function App() {
             <Route exact path="/news" element={<News />}></Route>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      {/* <News/> */}
+      <Todos></Todos>
     </div>
   );
 }
